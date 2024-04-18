@@ -1,10 +1,15 @@
 // This is for the About page schema type
 import {defineField, defineType} from 'sanity'
 
-export const About = defineType({
+export const aboutType = defineType({
   name: 'about',
   title: 'About',
   type: 'document',
+
+  _id: 'about',
+
+  __experiental_actions: ['update', /*'create', 'delete',*/ 'publish'],
+
   fields: [
     defineField({
       name: 'firstName',
@@ -12,22 +17,40 @@ export const About = defineType({
       type: 'string',
       validation: (Rule) => Rule.required().error("Name field can't be empty"),
     }),
+
     defineField({
       name: 'lastName',
       title: 'Last Name',
       type: 'string',
       validation: (Rule) => Rule.required().error("Name field can't be empty"),
     }),
+
+    defineField({
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+      description: 'Profile image: 200x200px',
+    }),
+
     defineField({
       name: 'location',
       title: 'Location',
-      type: 'string',
+      type: 'reference',
+      to: [{type: 'places'}],
     }),
+
     defineField({
       name: 'email',
       title: 'Email',
       type: 'email',
     }),
+
+    defineField({
+      name: 'phone',
+      title: 'Phone',
+      type: 'number',
+    }),
+
     defineField({
       name: 'bio',
       title: 'Bio',
@@ -59,7 +82,6 @@ export const About = defineType({
                   {title: 'LinkedIn', value: 'linkedin'},
                   {title: 'YouTube', value: 'youtube'},
                   {title: 'github', value: 'github'},
-                  {title: 'Pinterest', value: 'pinterest'},
                 ],
               },
             }),
@@ -73,4 +95,8 @@ export const About = defineType({
       ],
     }),
   ],
+
+  initialValue: {
+    _id: 'about',
+  },
 })
