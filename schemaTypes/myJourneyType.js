@@ -13,6 +13,11 @@ export const myJourneyType = defineType({
       validation: (Rule) => Rule.required().error("Title field can't be empty"),
     }),
     defineField({
+      name: 'subtitle',
+      title: 'Subtitle',
+      type: 'string',
+    }),
+    defineField({
       name: 'location',
       title: 'Location',
       type: 'reference',
