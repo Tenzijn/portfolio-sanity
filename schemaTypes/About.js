@@ -59,6 +59,7 @@ export const About = defineType({
                   {title: 'LinkedIn', value: 'linkedin'},
                   {title: 'YouTube', value: 'youtube'},
                   {title: 'github', value: 'github'},
+                  {title: 'Pinterest', value: 'pinterest'},
                 ],
               },
             }),
