@@ -26,7 +26,13 @@ export const skillsType = defineType({
     defineField({
       name: 'icon',
       title: 'Icon',
-      type: 'image',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'icon'}],
+        },
+      ],
     }),
 
     defineField({

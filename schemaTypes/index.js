@@ -5,6 +5,7 @@ import {projectsType} from './projectsType'
 import {educationType} from './educationType'
 import {skillsType} from './skillsType'
 import {hobbiesType} from './hobbiesType'
+import {iconType} from './iconsType'
 
 export const schemaTypes = [
   aboutType,
@@ -14,4 +15,5 @@ export const schemaTypes = [
   educationType,
   skillsType,
   hobbiesType,
+  iconType,
 ]
